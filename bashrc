@@ -2,6 +2,8 @@
 ### load extensions ###
 
 source "$HOME/dotfiles/git-completion.bash"
+source "$HOME/dotfiles/docker-compose.bash"
+source "$HOME/dotfiles/docker.bash"
 source "$HOME/dotfiles/git-prompt.sh"
 
 ### ENV variables ###
