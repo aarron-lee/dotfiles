@@ -3,6 +3,9 @@
 alias dev="cd ~/Development"
 alias glol="git log --oneline"
 alias gl10="git log --oneline -n 10"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gdn="git diff --name-only"
 
 alias sl="ls"
 alias ls="ls -G"
@@ -18,4 +21,14 @@ g () {
     git "$@"
   fi
 }
+
+d () {
+  if [ $# -eq 0 ]
+  then
+    docker container ls
+  else
+    docker "$@"
+  fi
+}
+
 __git_complete g _git
