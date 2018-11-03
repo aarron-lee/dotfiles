@@ -8,4 +8,4 @@
 # All it should do is load .bashrc
 ###
 
-source "$HOME/.bashrc"
+source "$HOME/.bash_dotfiles"
