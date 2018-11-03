@@ -1,10 +1,10 @@
 
 ### load extensions ###
 
-source "$HOME/dotfiles/git-completion.bash"
-source "$HOME/dotfiles/docker-compose.bash"
-source "$HOME/dotfiles/docker.bash"
-source "$HOME/dotfiles/git-prompt.sh"
+source "$HOME/.dotfiles/git-completion.bash"
+source "$HOME/.dotfiles/docker-compose.bash"
+source "$HOME/.dotfiles/docker.bash"
+source "$HOME/.dotfiles/git-prompt.sh"
 
 ### ENV variables ###
 
@@ -21,4 +21,4 @@ export PS1="$RED\w$WHITE\$(__git_ps1)$RED\$$RESET "
 ### other ###
 
 # load aliases
-[[ -f "$HOME/dotfiles/aliases" ]] && source "$HOME/dotfiles/aliases"
+[[ -f "$HOME/.dotfiles/aliases" ]] && source "$HOME/.dotfiles/aliases"
