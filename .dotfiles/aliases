@@ -22,6 +22,11 @@ g () {
   fi
 }
 
+# make `gco` behave like git checkout
+gco () {
+  git checkout "$@"
+}
+
 d () {
   if [ $# -eq 0 ]
   then
@@ -32,3 +37,4 @@ d () {
 }
 
 __git_complete g _git
+__git_complete gco _git_checkout
