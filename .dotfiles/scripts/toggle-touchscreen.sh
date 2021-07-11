@@ -18,7 +18,9 @@ PRINT_TEXT="Touchpad (ID $TouchpadId) &amp; Touchscreen (ID $TouchscreenId) "
 if [ "$state" -eq '1' ];then
     xinput --disable "$TouchpadId"
     xinput --disable "$TouchscreenId"
+    echo "disabled"
 else
     xinput --enable "$TouchpadId"
     xinput --enable "$TouchscreenId"
+    echo "enabled"
 fi

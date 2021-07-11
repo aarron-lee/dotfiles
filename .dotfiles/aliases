@@ -12,6 +12,8 @@ alias ls="ls -G"
 alias irb="pry"
 alias be="bundle exec"
 
+alias toggle-touch="bash ~/.dotfiles/scripts/toggle-touchscreen.sh"
+
 # make `g` behave like `git status` with no args, or `git` with args
 g () {
   if [ $# -eq 0 ]
