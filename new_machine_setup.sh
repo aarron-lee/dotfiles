@@ -15,6 +15,7 @@ flatpak install flathub info.febvre.Komikku -y
 flatpak install flathub com.github.tenderowl.frog -y
 flatpak install flathub io.github.peazip.PeaZip -y
 flatpak install flathub net.cozic.joplin_desktop -y
+flatpak install flathub it.mijorus.smile -y
 
 cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
