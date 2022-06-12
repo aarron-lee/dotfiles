@@ -23,3 +23,8 @@ cp ./.bash_dotfiles ~/.bash_dotfiles
 mv ./.dotfiles ~/.dotfiles
 
 echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
+
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf -y install ffmpeg
