@@ -17,6 +17,7 @@ flatpak install flathub io.github.peazip.PeaZip -y
 flatpak install flathub net.cozic.joplin_desktop -y
 flatpak install flathub it.mijorus.smile -y
 flatpak install flathub org.signal.Signal -y
+flatpak install flathub org.onlyoffice.desktopeditors -y
 
 cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
