@@ -19,6 +19,7 @@ flatpak install flathub it.mijorus.smile -y
 flatpak install flathub org.signal.Signal -y
 flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install flathub io.github.cboxdoerfer.FSearch -y
+flatpak install flathub fr.romainvigier.MetadataCleaner -y
 
 cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
