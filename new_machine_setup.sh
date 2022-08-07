@@ -1,4 +1,5 @@
 
+flatpak remote-delete flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install flathub me.kozec.syncthingtk -y
@@ -21,6 +22,9 @@ flatpak install flathub org.onlyoffice.desktopeditors -y
 flatpak install flathub io.github.cboxdoerfer.FSearch -y
 flatpak install flathub fr.romainvigier.MetadataCleaner -y
 flatpak install flathub net.ankiweb.Anki -y
+flatpak install flathub com.microsoft.Edge -y
+flatpak install flathub ua.org.brezblock.q4wine -y
+flatpak install flathub com.sublimetext.three -y
 
 cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
