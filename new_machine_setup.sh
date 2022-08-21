@@ -25,6 +25,7 @@ flatpak install flathub net.ankiweb.Anki -y
 flatpak install flathub com.microsoft.Edge -y
 flatpak install flathub ua.org.brezblock.q4wine -y
 flatpak install flathub com.sublimetext.three -y
+flatpak install flathub org.kde.gwenview -y
 
 cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
