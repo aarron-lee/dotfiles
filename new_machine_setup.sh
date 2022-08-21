@@ -27,6 +27,10 @@ flatpak install flathub ua.org.brezblock.q4wine -y
 flatpak install flathub com.sublimetext.three -y
 flatpak install flathub org.kde.gwenview -y
 
+# setup KDE dolphin w/ dark backgroud
+flatpak install flathub org.kde.dolphin -y
+cp ./kdeglobals ~/.config/kdeglobals
+
 cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
 mv ./.dotfiles ~/.dotfiles
