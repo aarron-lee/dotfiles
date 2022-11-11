@@ -27,6 +27,7 @@ flatpak install flathub ua.org.brezblock.q4wine -y
 flatpak install flathub com.sublimetext.three -y
 flatpak install flathub org.kde.gwenview -y
 flatpak install flathub com.heroicgameslauncher.hgl -y
+flatpak install flathub dev.lapce.lapce -y
 
 # setup KDE dolphin w/ dark backgroud
 flatpak install flathub org.kde.dolphin -y
