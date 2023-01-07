@@ -44,3 +44,5 @@ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 sudo dnf -y install ffmpeg
+
+# TODO: input remapper: https://github.com/sezanzeb/input-remapper
