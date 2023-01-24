@@ -46,3 +46,4 @@ sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 sudo dnf -y install ffmpeg
 
 # TODO: input remapper: https://github.com/sezanzeb/input-remapper
+# TODO: manga-ocr, tesseract-ocr, zbar-tools

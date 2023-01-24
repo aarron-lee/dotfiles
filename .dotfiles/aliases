@@ -6,6 +6,12 @@ alias gl10="git log --oneline -n 10"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gdn="git diff --name-only"
+alias qrcode="flameshot gui --raw | zbarimg --raw - | xclip -in -selection clipboard"
+alias ocr="flameshot gui --raw | \
+  tesseract stdin stdout | \
+  xclip -in -selection clipboard"
+alias mangaocr="flameshot gui --path /tmp/mangaocr/ocr_tmp | manga_ocr --read_from=\"/tmp/mangaocr/\" -w clipboard | rm /tmp/mangaocr/ocr_tmp.png"
+
 
 alias sl="ls"
 alias ls="ls -G"
