@@ -29,6 +29,7 @@ flatpak install flathub org.kde.gwenview -y
 flatpak install flathub com.heroicgameslauncher.hgl -y
 flatpak install flathub dev.lapce.lapce -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
+flatpak install flathub com.authy.Authy -y
 
 # setup KDE dolphin w/ dark backgroud
 flatpak install flathub org.kde.dolphin -y
