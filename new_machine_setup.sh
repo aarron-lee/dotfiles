@@ -30,6 +30,21 @@ flatpak install flathub com.heroicgameslauncher.hgl -y
 flatpak install flathub dev.lapce.lapce -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
 flatpak install flathub com.authy.Authy -y
+flatpak install flathub com.github.tchx84.Flatseal -y
+flatpak install flathub com.system76.Popsicle -y
+flatpak install flathub com.ultimaker.cura -y
+flatpak install flathub io.github.cboxdoerfer.FSearch -y
+flatpak install flathub net.sapples.LiveCaptions -y
+flatpak install flathub org.ferdium.Ferdium -y
+flatpak install flathub org.kde.kdenlive -y
+flatpak install flathub org.videolan.VLC -y
+flatpak install flathub org.x.Warpinator -y
+
+
+# gnome extension manager
+flatpak install flathub com.mattjakeman.ExtensionManager -y
+
+
 
 # setup KDE dolphin w/ dark backgroud
 flatpak install flathub org.kde.dolphin -y
