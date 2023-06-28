@@ -39,11 +39,11 @@ flatpak install flathub org.ferdium.Ferdium -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub org.videolan.VLC -y
 flatpak install flathub org.x.Warpinator -y
+flatpak install flathub com.tomjwatson.Emote -y
 
 
 # gnome extension manager
 flatpak install flathub com.mattjakeman.ExtensionManager -y
-
 
 
 # setup KDE dolphin w/ dark backgroud
@@ -56,10 +56,10 @@ mv ./.dotfiles ~/.dotfiles
 
 echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
 
-sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+# sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf -y install ffmpeg
+# sudo dnf -y install ffmpeg
 
 # TODO: input remapper: https://github.com/sezanzeb/input-remapper
 # TODO: manga-ocr, tesseract-ocr, zbar-tools
