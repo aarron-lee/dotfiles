@@ -40,7 +40,8 @@ flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub org.videolan.VLC -y
 flatpak install flathub org.x.Warpinator -y
 flatpak install flathub com.tomjwatson.Emote -y
-
+flatpak install flathub org.mozilla.firefox -y
+flatpak install flathub com.google.Chrome -y
 
 # gnome extension manager
 flatpak install flathub com.mattjakeman.ExtensionManager -y
@@ -60,6 +61,9 @@ echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
 # sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # sudo dnf -y install ffmpeg
+
+# enable touchscreen scrolling on firefox wayland
+echo export MOZ_ENABLE_WAYLAND=1 | sudo tee /etc/profile.d/use-moz-enable-wayland.sh
 
 # TODO: input remapper: https://github.com/sezanzeb/input-remapper
 # TODO: manga-ocr, tesseract-ocr, zbar-tools
