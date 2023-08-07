@@ -1,0 +1,3 @@
+https://github.com/devangshekhawat/Fedora-38-Post-Install-Guide
+
+https://github.com/manishprivet/dynamic-gnome-wallpapers

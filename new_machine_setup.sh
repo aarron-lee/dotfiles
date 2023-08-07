@@ -42,6 +42,7 @@ flatpak install flathub org.x.Warpinator -y
 flatpak install flathub com.tomjwatson.Emote -y
 flatpak install flathub org.mozilla.firefox -y
 flatpak install flathub com.google.Chrome -y
+flatpak install flathub org.jdownloader.JDownloader -y
 
 # gnome extension manager
 flatpak install flathub com.mattjakeman.ExtensionManager -y
