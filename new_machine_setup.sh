@@ -44,6 +44,7 @@ flatpak install flathub org.mozilla.firefox -y
 flatpak install flathub com.google.Chrome -y
 flatpak install flathub org.jdownloader.JDownloader -y
 flatpak install flathub net.retrodeck.retrodeck -y
+flatpak install flathub com.github.Matoking.protontricks -y
 
 # gnome extension manager
 flatpak install flathub com.mattjakeman.ExtensionManager -y
