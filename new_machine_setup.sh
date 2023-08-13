@@ -46,6 +46,7 @@ flatpak install flathub org.jdownloader.JDownloader -y
 flatpak install flathub net.retrodeck.retrodeck -y
 flatpak install flathub com.github.Matoking.protontricks -y
 flatpak install flathub com.github.jeromerobert.pdfarranger -y
+flatpak install flathub eu.scarpetta.PDFMixTool -y
 
 # gnome extension manager
 flatpak install flathub com.mattjakeman.ExtensionManager -y
