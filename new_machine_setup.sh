@@ -61,6 +61,9 @@ cat ./.bashrc >> ~/.bashrc
 cp ./.bash_dotfiles ~/.bash_dotfiles
 mv ./.dotfiles ~/.dotfiles
 
+mkdir ~/.fonts
+cp ./.fonts/*.ttf ~/.fonts
+
 echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
 
 # sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
