@@ -10,7 +10,8 @@ brew install tldr
 brew install atuin
 curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
 echo '[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh' >> ~/.bashrc
-echo 'eval "$(atuin init bash)"' >> ~/.bashrc
+sudo chcon -u system_u -r object_r --type=bin_t "$HOME/.bash-preexec.sh"
+echo 'eval "$(atuin init bash  --disable-up-arrow)"' >> ~/.bashrc
 
 flatpak install flathub com.github.zocker_160.SyncThingy -y --user
 flatpak install flathub com.calibre_ebook.calibre -y --user
