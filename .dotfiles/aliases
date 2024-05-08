@@ -12,6 +12,7 @@ alias ocr="flameshot gui --raw | \
   xclip -in -selection clipboard"
 alias mangaocr="flameshot gui --path /tmp/mangaocr/ocr_tmp | manga_ocr --read_from=\"/tmp/mangaocr/\" -w clipboard | rm /tmp/mangaocr/ocr_tmp.png"
 alias chcon_bin="sudo chcon -u system_u -r object_r --type=bin_t "
+alias lapce="flatpak run dev.lapce.lapce "
 
 
 alias sl="ls"
