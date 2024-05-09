@@ -49,6 +49,7 @@ flatpak install flathub com.github.jeromerobert.pdfarranger -y --user
 flatpak install flathub eu.scarpetta.PDFMixTool -y --user
 flatpak install flathub io.gitlab.adhami3310.Converter -y --user
 flatpak install flathub net.nokyan.Resources -y --user
+flatpak install flathub org.localsend.localsend_app -y --user
 
 # gnome extension manager
 # flatpak install flathub com.mattjakeman.ExtensionManager -y --user
