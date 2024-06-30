@@ -17,9 +17,7 @@ cat <<EOF > "$HOME/.local/bin/waydroid-full-ui"
 source /etc/default/waydroid-launcher
 
 # Kill any previous remnants
-if [ "$(systemctl is-active waydroid-container.service)" == 'active' ]; then
-	pkexec /usr/libexec/waydroid-container-stop
-fi
+pkexec /usr/libexec/waydroid-container-stop
 
 # Launch Cage & Waydroid
 pkexec /usr/libexec/waydroid-container-start
