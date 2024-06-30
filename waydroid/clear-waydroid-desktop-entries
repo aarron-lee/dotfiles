@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sleep 5
+
+rm $HOME/.local/share/applications/waydroid.*.desktop
