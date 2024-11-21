@@ -13,6 +13,7 @@
 # sudo chcon -u system_u -r object_r --type=bin_t "$HOME/.bash-preexec.sh"
 # echo 'eval "$(atuin init bash  --disable-up-arrow)"' >> ~/.bashrc
 
+flatpak install flathub io.github.vikdevelop.SaveDesktop -y --system
 flatpak install flathub com.github.zocker_160.SyncThingy -y --system
 flatpak install flathub com.calibre_ebook.calibre -y --system
 flatpak install flathub org.videolan.VLC -y --system
