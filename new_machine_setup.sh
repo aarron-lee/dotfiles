@@ -56,6 +56,7 @@ flatpak install flathub org.kde.kolourpaint -y --system
 flatpak install flathub com.github.flxzt.rnote -y --system
 flatpak install flathub com.github.KRTirtho.Spotube -y --system
 flatpak install flathub one.ablaze.floorp -y --system
+flatpak install flathub md.obsidian.Obsidian -y --system
 
 # gnome extension manager
 # flatpak install flathub com.mattjakeman.ExtensionManager -y --system
