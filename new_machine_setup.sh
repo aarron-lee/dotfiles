@@ -51,6 +51,10 @@ flatpak install flathub eu.scarpetta.PDFMixTool -y --system
 flatpak install flathub io.gitlab.adhami3310.Converter -y --system
 flatpak install flathub net.nokyan.Resources -y --system
 flatpak install flathub org.localsend.localsend_app -y --system
+flatpak install flathub de.leopoldluley.Clapgrep -y --system
+flatpak install flathub org.kde.kolourpaint -y --system
+flatpak install flathub com.github.flxzt.rnote -y --system
+flatpak install flathub com.github.KRTirtho.Spotube -y --system
 
 # gnome extension manager
 # flatpak install flathub com.mattjakeman.ExtensionManager -y --system
