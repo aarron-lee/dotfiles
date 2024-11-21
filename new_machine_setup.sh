@@ -71,7 +71,7 @@ cp ./.fonts/*.ttf ~/.fonts
 echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
 
 # enable touchscreen scrolling on firefox wayland
-echo export MOZ_ENABLE_WAYLAND=1 | sudo tee /etc/profile.d/use-moz-enable-wayland.sh
+# echo export MOZ_ENABLE_WAYLAND=1 | sudo tee /etc/profile.d/use-moz-enable-wayland.sh
 
 # TODO: input remapper: https://github.com/sezanzeb/input-remapper
 # TODO: manga-ocr, tesseract-ocr, zbar-tools
