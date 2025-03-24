@@ -30,6 +30,7 @@ flatpak install flathub org.signal.Signal -y --system
 flatpak install flathub org.onlyoffice.desktopeditors -y --system
 flatpak install flathub fr.romainvigier.MetadataCleaner -y --system
 flatpak install flathub net.ankiweb.Anki -y --system
+flatpak install flathub io.gitlab.theevilskeleton.Upscaler --system -y
 # flatpak install flathub ua.org.brezblock.q4wine -y --system
 flatpak install flathub com.sublimetext.three -y --system
 flatpak install flathub com.heroicgameslauncher.hgl -y --system
