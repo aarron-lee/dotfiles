@@ -1,5 +1,7 @@
 # bazzite/ublueOS
 
+# TODO: earlyoom setup https://github.com/rfjakob/earlyoom
+
 # ujust install-brew
 
 # brew install bat
@@ -17,7 +19,6 @@ flatpak install flathub io.github.vikdevelop.SaveDesktop -y --system
 flatpak install flathub com.github.zocker_160.SyncThingy -y --system
 flatpak install flathub com.calibre_ebook.calibre -y --system
 flatpak install flathub org.videolan.VLC -y --system
-flatpak install flathub com.slack.Slack -y --system
 flatpak install flathub com.discordapp.Discord -y --system
 flatpak install flathub com.github.tchx84.Flatseal -y --system
 flatpak install flathub com.usebottles.bottles -y --system
@@ -25,7 +26,7 @@ flatpak install flathub net.davidotek.pupgui2 -y --system
 flatpak install flathub com.github.tenderowl.frog -y --system
 flatpak install flathub io.github.peazip.PeaZip -y --system
 flatpak install flathub net.cozic.joplin_desktop -y --system
-flatpak install flathub it.mijorus.smile -y --system
+# flatpak install flathub it.mijorus.smile -y --system
 flatpak install flathub org.signal.Signal -y --system
 flatpak install flathub org.onlyoffice.desktopeditors -y --system
 flatpak install flathub fr.romainvigier.MetadataCleaner -y --system
@@ -34,16 +35,18 @@ flatpak install flathub io.gitlab.theevilskeleton.Upscaler --system -y
 # flatpak install flathub ua.org.brezblock.q4wine -y --system
 flatpak install flathub com.sublimetext.three -y --system
 flatpak install flathub com.heroicgameslauncher.hgl -y --system
-flatpak install flathub dev.lapce.lapce -y --system
+# flatpak install flathub dev.lapce.lapce -y --system
 flatpak install flathub org.qbittorrent.qBittorrent -y --system
 flatpak install flathub com.system76.Popsicle -y --system
 flatpak install flathub com.ultimaker.cura -y --system
 flatpak install flathub net.sapples.LiveCaptions -y --system
 flatpak install flathub org.kde.kdenlive -y --system
-flatpak install flathub org.x.Warpinator -y --system
+# flatpak install flathub org.x.Warpinator -y --system
 flatpak install flathub com.tomjwatson.Emote -y --system
-flatpak install flathub org.mozilla.firefox -y --system
-flatpak install flathub com.google.Chrome -y --system
+# flatpak install flathub org.mozilla.firefox -y --system
+# flatpak install flathub com.google.Chrome -y --system
+flatpak install flathub app.zen_browser.zen -y --system
+flatpak install flathub io.github.ungoogled_software.ungoogled_chromium -y --system
 flatpak install flathub org.jdownloader.JDownloader -y --system
 flatpak install flathub net.retrodeck.retrodeck -y --system
 flatpak install flathub com.github.Matoking.protontricks -y --system
@@ -57,7 +60,7 @@ flatpak install flathub org.kde.kolourpaint -y --system
 flatpak install flathub com.github.flxzt.rnote -y --system
 flatpak install flathub com.github.KRTirtho.Spotube -y --system
 flatpak install flathub one.ablaze.floorp -y --system
-flatpak install flathub md.obsidian.Obsidian -y --system
+# flatpak install flathub md.obsidian.Obsidian -y --system
 
 # gnome extension manager
 # flatpak install flathub com.mattjakeman.ExtensionManager -y --system
