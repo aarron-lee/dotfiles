@@ -1,5 +1,15 @@
 #!/bin/bash
 
+HOME_DIR=""
+
+if [ "$(id -u)" -ne 0 ]; then
+    HOME_DIR=$HOME
+else
+    HOME_DIR=$(getent passwd "$SUDO_USER" | cut -d: -f6)
+fi
+
+echo $HOME_DIR
+
 sleep 5
 
-rm $HOME/.local/share/applications/waydroid.*.desktop
+rm $HOME_DIR/.local/share/applications/waydroid.*.desktop
