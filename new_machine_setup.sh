@@ -19,7 +19,7 @@ flatpak install flathub io.github.vikdevelop.SaveDesktop -y --system
 flatpak install flathub com.github.zocker_160.SyncThingy -y --system
 flatpak install flathub com.calibre_ebook.calibre -y --system
 flatpak install flathub org.videolan.VLC -y --system
-flatpak install flathub com.discordapp.Discord -y --system
+# flatpak install flathub com.discordapp.Discord -y --system
 flatpak install flathub com.github.tchx84.Flatseal -y --system
 flatpak install flathub com.usebottles.bottles -y --system
 flatpak install flathub net.davidotek.pupgui2 -y --system
@@ -29,7 +29,7 @@ flatpak install flathub net.cozic.joplin_desktop -y --system
 # flatpak install flathub it.mijorus.smile -y --system
 flatpak install flathub org.signal.Signal -y --system
 flatpak install flathub org.onlyoffice.desktopeditors -y --system
-flatpak install flathub fr.romainvigier.MetadataCleaner -y --system
+# flatpak install flathub fr.romainvigier.MetadataCleaner -y --system
 flatpak install flathub net.ankiweb.Anki -y --system
 flatpak install flathub io.gitlab.theevilskeleton.Upscaler --system -y
 # flatpak install flathub ua.org.brezblock.q4wine -y --system
@@ -46,6 +46,7 @@ flatpak install flathub com.tomjwatson.Emote -y --system
 # flatpak install flathub org.mozilla.firefox -y --system
 # flatpak install flathub com.google.Chrome -y --system
 flatpak install flathub app.zen_browser.zen -y --system
+flatpak install flathub be.alexandervanhee.gradia -y --system
 flatpak install flathub io.github.ungoogled_software.ungoogled_chromium -y --system
 flatpak install flathub org.jdownloader.JDownloader -y --system
 flatpak install flathub net.retrodeck.retrodeck -y --system
@@ -60,13 +61,14 @@ flatpak install flathub org.kde.kolourpaint -y --system
 flatpak install flathub com.github.flxzt.rnote -y --system
 flatpak install flathub com.github.KRTirtho.Spotube -y --system
 flatpak install flathub one.ablaze.floorp -y --system
+flatpak install flathub io.github.wartybix.Constrict -y --system
 # flatpak install flathub md.obsidian.Obsidian -y --system
 
 # gnome extension manager
 # flatpak install flathub com.mattjakeman.ExtensionManager -y --system
 
 # manage Appimages
-# flatpak install flathub it.mijorus.gearlever -y --system
+flatpak install flathub it.mijorus.gearlever -y --system
 
 # setup KDE dolphin w/ dark backgroud
 # flatpak install flathub org.kde.dolphin -y --system
@@ -80,6 +82,34 @@ mkdir ~/.fonts
 cp ./.fonts/*.ttf ~/.fonts
 
 echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
+
+curl -L https://raw.githubusercontent.com/aarron-lee/StreamingServiceLauncher/refs/heads/main/install.sh | sh
+
+ICONS_DIR=$HOME/Pictures/icons
+
+mkdir -p $ICONS_DIR
+
+cp ./icons/* $ICONS_DIR
+
+cat <<EOF > "$HOME/.local/share/applications/gemini.desktop"
+[Desktop Entry]
+Name=Gemini
+Exec=APP_URL="https://gemini.google.com" USE_FULL_SCREEN=0 DISABLE_MENU_BAR=0 ENABLE_APP_INDICATOR=1 APP_ICON_PATH="$ICONS_DIR/gemini.png" APP_NAME="Gemini" $HOME/Applications/StreamingServiceLauncher.AppImage
+TryExec=$HOME/Applications/StreamingServiceLauncher.AppImage
+Icon=$ICONS_DIR/gemini.png
+Terminal=false
+Type=Application
+EOF
+
+cat <<EOF > "$HOME/.local/share/applications/habit.desktop"
+[Desktop Entry]
+Name=Simple Habit Tracker
+Exec=APP_URL="https://aarronlee.com/simple-habit-tracker" USE_FULL_SCREEN=0 DISABLE_MENU_BAR=1 ENABLE_APP_INDICATOR=1 APP_ICON_PATH="$ICONS_DIR/habit.png" APP_NAME="Simple Habit Tracker" $HOME/Applications/StreamingServiceLauncher.AppImage
+TryExec=$HOME/Applications/StreamingServiceLauncher.AppImage
+Icon=$ICONS_DIR/habit.png
+Terminal=false
+Type=Application
+EOF
 
 # enable touchscreen scrolling on firefox wayland
 # echo export MOZ_ENABLE_WAYLAND=1 | sudo tee /etc/profile.d/use-moz-enable-wayland.sh
