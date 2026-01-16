@@ -18,6 +18,9 @@ if [[ -f "$DESKTOP_FILE" && -f "$APPIMAGE_FILE" ]]; then
 
     mv $DESKTOP_FILE $STUDY_DIR
     mv $APPIMAGE_FILE $STUDY_DIR
+
+    mv $APP_DIR/start-study.desktop $STUDY_DIR
+    mv $STUDY_DIR/stop-study.desktop $APP_DIR/stop-study.desktop
 else
     exit 1
 fi

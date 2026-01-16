@@ -18,6 +18,9 @@ if [[ -f "$STUDY_DIR/zen_browser.desktop" && -f "$STUDY_DIR/zen_browser.appimage
 
     mv $STUDY_DIR/zen_browser.desktop $DESKTOP_FILE
     mv $STUDY_DIR/zen_browser.appimage $APPIMAGE_FILE
+
+    mv $STUDY_DIR/start-study.desktop $APP_DIR/start-study.desktop
+    mv $APP_DIR/stop-study.desktop $STUDY_DIR
 else
     exit 1
 fi
