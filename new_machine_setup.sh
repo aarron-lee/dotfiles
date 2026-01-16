@@ -85,28 +85,30 @@ echo "export CALIBRE_USE_DARK_PALETTE=1" >> ~/.bash_profile
 
 curl -L https://raw.githubusercontent.com/aarron-lee/StreamingServiceLauncher/refs/heads/main/install.sh | sh
 
-ICONS_DIR=$HOME/Pictures/icons
+# when icons are in .local/share/icons,
+# you can use Icon=filename in desktop entries
+ICONS_DIR=$HOME/.local/share/icons
 
 mkdir -p $ICONS_DIR
 
 cp ./icons/* $ICONS_DIR
 
-cat <<EOF > "$HOME/.local/share/applications/gemini.desktop"
-[Desktop Entry]
-Name=Gemini
-Exec=APP_URL="https://gemini.google.com" USE_FULL_SCREEN=0 DISABLE_MENU_BAR=0 ENABLE_APP_INDICATOR=1 APP_ICON_PATH="$ICONS_DIR/gemini.png" APP_NAME="Gemini" $HOME/Applications/StreamingServiceLauncher.AppImage
-TryExec=$HOME/Applications/StreamingServiceLauncher.AppImage
-Icon=$ICONS_DIR/gemini.png
-Terminal=false
-Type=Application
-EOF
+# cat <<EOF > "$HOME/.local/share/applications/gemini.desktop"
+# [Desktop Entry]
+# Name=Gemini
+# Exec=APP_URL="https://gemini.google.com" USE_FULL_SCREEN=0 DISABLE_MENU_BAR=0 ENABLE_APP_INDICATOR=1 APP_ICON_PATH="$ICONS_DIR/gemini.png" APP_NAME="Gemini" $HOME/Applications/StreamingServiceLauncher.AppImage
+# TryExec=$HOME/Applications/StreamingServiceLauncher.AppImage
+# Icon=gemini
+# Terminal=false
+# Type=Application
+# EOF
 
 cat <<EOF > "$HOME/.local/share/applications/habit.desktop"
 [Desktop Entry]
 Name=Simple Habit Tracker
 Exec=APP_URL="https://aarronlee.com/simple-habit-tracker" USE_FULL_SCREEN=0 DISABLE_MENU_BAR=1 ENABLE_APP_INDICATOR=1 APP_ICON_PATH="$ICONS_DIR/habit.png" APP_NAME="Simple Habit Tracker" $HOME/Applications/StreamingServiceLauncher.AppImage
 TryExec=$HOME/Applications/StreamingServiceLauncher.AppImage
-Icon=$ICONS_DIR/habit.png
+Icon=habit
 Terminal=false
 Type=Application
 EOF
