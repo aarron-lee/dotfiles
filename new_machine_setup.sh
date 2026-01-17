@@ -1,5 +1,10 @@
 # bazzite/ublueOS
 
+if [ "$(id -u)" -eq 0 ]; then
+    echo "This script must not be run as root" >&2
+    exit 1
+fi
+
 # TODO: earlyoom setup https://github.com/rfjakob/earlyoom
 
 # ujust install-brew
@@ -118,3 +123,11 @@ EOF
 
 # TODO: input remapper: https://github.com/sezanzeb/input-remapper
 # TODO: manga-ocr, tesseract-ocr, zbar-tools
+
+sudo mkdir -p /etc/libinput
+
+sudo cat <<EOF > "/etc/libinput/local-overrides.quirks"
+[Logitech MX Anywhere 3]
+MatchName=Logitech MX Anywhere 3*
+ModelBouncingKeys=1
+EOF
