@@ -6,6 +6,7 @@ if [ "$(id -u)" -eq 0 ]; then
 fi
 
 # TODO: earlyoom setup https://github.com/rfjakob/earlyoom
+# TODO: waydroid-helper
 
 # ujust install-brew
 
@@ -50,7 +51,7 @@ flatpak install flathub org.kde.kdenlive -y --system
 flatpak install flathub com.tomjwatson.Emote -y --system
 # flatpak install flathub org.mozilla.firefox -y --system
 # flatpak install flathub com.google.Chrome -y --system
-flatpak install flathub app.zen_browser.zen -y --system
+# flatpak install flathub app.zen_browser.zen -y --system
 flatpak install flathub be.alexandervanhee.gradia -y --system
 flatpak install flathub io.github.ungoogled_software.ungoogled_chromium -y --system
 flatpak install flathub org.jdownloader.JDownloader -y --system
@@ -131,3 +132,14 @@ sudo cat <<EOF > "/etc/libinput/local-overrides.quirks"
 MatchName=Logitech MX Anywhere 3*
 ModelBouncingKeys=1
 EOF
+
+echo "Installing zen browser AppImage"
+if grep -q 'it.mijorus.gearlever' <<< $(flatpak list); then
+    wget \
+        $(curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest | \
+        jq -r ".assets[] | select(.name | test(\".*x86_64.AppImage\")) | .browser_download_url") \
+        -O $HOME/Downloads/zen-browser.AppImage
+    chmod +x $HOME/Downloads/zen-browser.AppImage
+    echo "Download complete, add it to your app menu via Gear Lever"
+    flatpak run it.mijorus.gearlever $HOME/Downloads/zen-browser.AppImage
+fi
