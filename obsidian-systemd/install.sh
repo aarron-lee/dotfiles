@@ -16,6 +16,7 @@ CONFIG_DIR=$HOME/.config/$APP_NAME
 # disable if currently running
 systemctl disable --user --now $APP_NAME.timer
 systemctl disable --user --now $APP_NAME.service
+systemctl disable --user --now $APP_NAME-on-internet.service
 
 # ========================================
 
@@ -28,6 +29,19 @@ Description=Run note sync script
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/bash $CONFIG_DIR/sync.sh
+
+[Install]
+WantedBy=default.target
+EOF
+
+cat <<EOF >  "$SYSTEMD_DIR/$APP_NAME-on-internet.service"
+[Unit]
+Description=Run script on network restore
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash $CONFIG_DIR/resume.sh
 
 [Install]
 WantedBy=default.target
@@ -70,9 +84,22 @@ else
 fi
 EOF
 
+cat <<EOF > "$CONFIG_DIR/resume.sh"
+#!/bin/bash
+
+cd $NOTE_DIR
+
+git stash
+git pull
+git stash pop
+
+EOF
+
 chmod +x $CONFIG_DIR/sync.sh
+chmod +x $CONFIG_DIR/resume.sh
 
 systemctl daemon-reload --user
 
 systemctl enable --user --now $APP_NAME.timer
 systemctl enable --user --now $APP_NAME.service
+systemctl enable --user --now $APP_NAME-on-internet.service
