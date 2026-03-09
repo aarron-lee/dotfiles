@@ -13,6 +13,12 @@ APP_NAME=obsidian-notes-monitor
 NOTE_DIR=$HOME/Development/obsidian-notes
 CONFIG_DIR=$HOME/.config/$APP_NAME
 
+# disable if currently running
+systemctl disable --user --now $APP_NAME.timer
+systemctl disable --user --now $APP_NAME.service
+
+# ========================================
+
 mkdir -p $CONFIG_DIR
 
 cat <<EOF >  "$SYSTEMD_DIR/$APP_NAME.service"
@@ -48,6 +54,10 @@ cat <<EOF > "$CONFIG_DIR/sync.sh"
 #!/bin/bash
 
 cd $NOTE_DIR
+
+git stash
+git pull
+git stash pop
 
 if [ -n "\$(git status --short)" ]; then
   echo "Changes detected in $NOTE_DIR: Proceeding with update."
