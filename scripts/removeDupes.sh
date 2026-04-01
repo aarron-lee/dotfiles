@@ -1,6 +1,8 @@
 #!/bin/bash
 
 SOURCE_DIR=""
+
+# images get removed from target dir to dupes dir
 TARGET_DIR=""
 
 DUPE_DIR="$HOME/Downloads/dupes"
