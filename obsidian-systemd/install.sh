@@ -49,13 +49,13 @@ EOF
 
 cat <<EOF > "$SYSTEMD_DIR/$APP_NAME.timer"
 [Unit]
-Description=Run note sync every 2 minutes
+Description=Run note sync every 1 minutes
 
 [Timer]
 # Run 1 minutes after the timer unit is activated
-OnActiveSec=2min
+OnActiveSec=1min
 # Run every 1 minutes thereafter
-OnUnitActiveSec=2min
+OnUnitActiveSec=1min
 # Optional: Ensures the job runs immediately if a cycle was missed while powered off
 Persistent=true
 
