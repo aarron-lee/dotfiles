@@ -67,20 +67,65 @@ EOF
 cat <<EOF > "$CONFIG_DIR/sync.sh"
 #!/bin/bash
 
-cd $NOTE_DIR
+REPO_PATH="$NOTE_DIR"
+COMMIT_MSG="vault sync: \$(date '+%Y-%m-%d %H:%M:%S')"
 
-git stash
-git pull
-git stash pop
+# ==============================================================================
+# HELPER FUNCTIONS
+# ==============================================================================
+notify_user() {
+    local title="$1"
+    local message="$2"
+    local urgency="\${3:-normal}"
 
-if [ -n "\$(git status --short)" ]; then
-  echo "Changes detected in $NOTE_DIR: Proceeding with update."
-  # Add your git add/commit logic here
-  git add -A
-  git commit -m "sync update from desktop $(date '+%Y-%m-%d %H:%M:%S')"
-  git push
+    if command -v notify-send &> /dev/null; then
+        notify-send -u "\$urgency" "\$title" "\$message"
+    fi
+    echo "[\$(date '+%Y-%m-%d %H:%M:%S')] [\$title] \$message" >&2
+}
+
+# ==============================================================================
+# MAIN ROUTINE
+# ==============================================================================
+
+if [ ! -d "\$REPO_PATH/.git" ]; then
+    notify_user "Git Sync Error" "Repository path '\$REPO_PATH' is not a valid Git repo." "critical"
+    exit 1
+fi
+
+cd "\$REPO_PATH" || exit 1
+
+# Stage changes
+git add -A
+
+# Commit if changes exist
+if ! git diff-index --quiet HEAD --; then
+    git commit -m "\$COMMIT_MSG"
+fi
+
+# Fetch remote
+if ! git fetch origin; then
+    echo "Git Sync Warning" "Failed to fetch remote. Offline?"
+    exit 1
+fi
+
+# Dry-run merge check
+if ! git merge origin/\$(git branch --show-current) --no-commit --no-ff &> /dev/null; then
+    git merge --abort
+    notify_user "Git Sync CONFLICT" "Merge conflict in \$REPO_PATH! Sync aborted." "critical"
+    exit 1
+fi
+
+if [ -f .git/MERGE_HEAD ]; then
+    git commit --no-edit
+fi
+
+# Push changes
+if git push origin "\$(git branch --show-current)"; then
+    echo "Git Sync Success" "Notes successfully synced."
 else
-  echo "Clean as a whistle: Nothing to commit."
+    notify_user "Git Sync Error" "Failed to push updates." "critical"
+    exit 1
 fi
 EOF
 
@@ -89,9 +134,7 @@ cat <<EOF > "$CONFIG_DIR/resume.sh"
 
 cd $NOTE_DIR
 
-git stash
 git pull
-git stash pop
 
 EOF
 
