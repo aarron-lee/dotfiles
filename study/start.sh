@@ -10,6 +10,14 @@ STUDY_DIR=$HOME/.study
 
 mkdir -p $STUDY_DIR
 
+CHROME_DESKTOP_FILE="$APP_DIR/com.google.Chrome.desktop"
+
+if [[ -f $CHROME_DESKTOP_FILE ]]; then
+    echo "move chrome to temporary location"
+
+    mv $CHROME_DESKTOP_FILE $STUDY_DIR
+fi
+
 DESKTOP_FILE="$APP_DIR/zen_browser.desktop"
 APPIMAGE_FILE="$HOME/AppImages/zen_browser.appimage"
 

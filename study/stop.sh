@@ -10,6 +10,14 @@ STUDY_DIR=$HOME/.study
 
 mkdir -p $STUDY_DIR
 
+CHROME_DESKTOP_FILE="$APP_DIR/com.google.Chrome.desktop"
+
+if [[ -f "$STUDY_DIR/com.google.Chrome.desktop" ]]; then
+  echo "move chrome back to location"
+
+  mv $STUDY_DIR/com.google.Chrome.desktop $CHROME_DESKTOP_FILE
+fi
+
 DESKTOP_FILE="$APP_DIR/zen_browser.desktop"
 APPIMAGE_FILE="$HOME/AppImages/zen_browser.appimage"
 
