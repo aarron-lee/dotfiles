@@ -12,6 +12,12 @@ mkdir -p $STUDY_DIR
 
 CHROME_DESKTOP_FILE="$APP_DIR/com.google.Chrome.desktop"
 
+FLATPAK_DESKTOP_CHROME="/var/lib/flatpak/exports/share/applications/com.google.Chrome.desktop"
+
+if [[ -f $FLATPAK_DESKTOP_CHROME ]]; then
+    cp $FLATPAK_DESKTOP_CHROME $CHROME_DESKTOP_FILE
+fi
+
 if [[ -f $CHROME_DESKTOP_FILE ]]; then
     echo "move chrome to temporary location"
 
@@ -31,4 +37,16 @@ if [[ -f "$DESKTOP_FILE" && -f "$APPIMAGE_FILE" ]]; then
     mv $STUDY_DIR/stop-study.desktop $APP_DIR/stop-study.desktop
 else
     exit 1
+fi
+
+if [[ -f $FLATPAK_DESKTOP_CHROME ]]; then
+    if [ "$EUID" -ne 0 ]; then
+        echo "Elevating privileges..."
+        exec pkexec "$0" "$@"
+    fi
+
+    echo "✓ Success! Running as root user (UID: $EUID)."
+
+    cp $FLATPAK_DESKTOP_CHROME $STUDY_DIR/com.google.Chrome.desktop.bak
+    rm $FLATPAK_DESKTOP_CHROME
 fi
