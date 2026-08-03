@@ -5,6 +5,18 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
+pkexec true
+
+if [ $? -ne 0 ]; then
+    zenity --error --text="Authentication failed or cancelled!" 2>/dev/null
+    exit 1
+fi
+
+# --- 3. Continue running as regular user ---
+echo "Continuing as normal user: $(whoami)..."
+
+# --------------------------------------------------
+
 APP_DIR=$HOME/.local/share/applications
 STUDY_DIR=$HOME/.study
 
