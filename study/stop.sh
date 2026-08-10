@@ -5,6 +5,18 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
+# Get the current hour in 24-hour format (00-23)
+# Strip leading zeros so Bash doesn't treat numbers like 08 or 09 as invalid octal
+current_hour=$(date +%-H)
+
+# Check if the hour is greater than or equal to 20 (8:00 PM)
+if [ "$current_hour" -ge 20 ]; then
+    echo "It is after 8 PM."
+else
+    echo "It is before 8 PM."
+    exit 0
+fi
+
 pkexec true
 
 if [ $? -ne 0 ]; then
