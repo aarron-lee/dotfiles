@@ -26,7 +26,7 @@ if [[ -f "$DESKTOP_FILE" && -f "$APPIMAGE_FILE" ]]; then
 [Desktop Entry]
 Type=Application
 Name=Start Studying
-Exec=$STUDY_DIR/start.sh
+Exec=sh -c '"$STUDY_DIR/remove_chrome.sh" && "$STUDY_DIR/start.sh"'
 Icon=study
 EOF
 
@@ -40,9 +40,11 @@ EOF
 
 
     cp ./start.sh $STUDY_DIR
+    cp ./remove_chrome.sh $STUDY_DIR
     cp ./stop.sh $STUDY_DIR
 
     sudo chcon -u system_u -r object_r --type=bin_t $STUDY_DIR/start.sh
+    sudo chcon -u system_u -r object_r --type=bin_t $STUDY_DIR/remove_chrome.sh
     sudo chcon -u system_u -r object_r --type=bin_t $STUDY_DIR/stop.sh
 
     echo "study scripts install complete"
