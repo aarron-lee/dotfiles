@@ -1,5 +1,7 @@
 #!/bin/bash
 
+APPIMAGE_DIR_NAME="AppImages"
+
 if [ "$(id -u)" -eq 0 ]; then
     echo "This script must not be run as root" >&2
     exit 1
@@ -11,7 +13,7 @@ STUDY_DIR=$HOME/.study
 mkdir -p $STUDY_DIR
 
 DESKTOP_FILE="$APP_DIR/zen_browser.desktop"
-APPIMAGE_FILE="$HOME/AppImages/zen_browser.appimage"
+APPIMAGE_FILE="$HOME/$APPIMAGE_DIR_NAME/zen_browser.appimage"
 
 if [[ -f "$DESKTOP_FILE" && -f "$APPIMAGE_FILE" ]]; then
     echo "Zen Browser is fully installed."
