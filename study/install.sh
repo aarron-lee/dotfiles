@@ -10,6 +10,10 @@ fi
 APP_DIR=$HOME/.local/share/applications
 STUDY_DIR=$HOME/.study
 
+if [[ -d "$HOME/Applications" && ! -d "$HOME/$APPIMAGE_DIR_NAME" ]]; then
+    APPIMAGE_DIR_NAME="Applications"
+fi
+
 mkdir -p $STUDY_DIR
 
 DESKTOP_FILE="$APP_DIR/zen_browser.desktop"
